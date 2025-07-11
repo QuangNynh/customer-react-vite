@@ -17,11 +17,11 @@ const AccountBalance = () => {
             page={1}
             totalCount={fakeUsers.length}
             pageSize={15}
-            onPageSizeChange={(newPageSize) => {
+            onPageSizeChange={() => {
               //   setPageSize(newPageSize);
               //   setPageNumber(0);
             }}
-            onPageChange={(page) => {
+            onPageChange={() => {
               // setPageNumber(page - 1)
             }}
             rowsPerPageOptions={[15, 30, 50]}

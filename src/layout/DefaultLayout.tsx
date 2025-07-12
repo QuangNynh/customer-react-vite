@@ -18,7 +18,7 @@ export default function DefaultLayout({
     <SidebarProvider>
       <AppSidebar />
       <SidebarInset>
-        <header className="flex h-10 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12 bg-[#223663]">
+        <header className="flex h-10 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12 bg-[#223663] overflow-hidden">
           <div className="flex items-center justify-between px-4 w-full">
             <SidebarTrigger className="-ml-1 text-white" />
             <div className="flex items-center gap-2">
@@ -34,12 +34,13 @@ export default function DefaultLayout({
               >
                 <Mail />
               </Button>
-
               <MenuUser />
             </div>
           </div>
         </header>
-        <div className="flex flex-1 flex-col gap-4 p-4">{children}</div>
+        <div className="flex flex-1 flex-col gap-4 p-4 h-[calc(100vh-2.5rem)] overflow-hidden">
+          {children}
+        </div>
       </SidebarInset>
     </SidebarProvider>
   );

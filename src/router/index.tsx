@@ -1,7 +1,9 @@
 import DefaultLayout from "@/layout/DefaultLayout";
+import LoginPage from "@/layout/Login";
 import AccountBalance from "@/pages/account-balance";
 import AccountList from "@/pages/account-list";
 import CardSettings from "@/pages/card-settings";
+import Dashboard from "@/pages/dashboard";
 import { Navigate, Outlet } from "react-router-dom";
 
 export const routesOutlets = [
@@ -21,7 +23,7 @@ export const routesOutlets = [
         path: "dashboard",
         element: (
           // <ProtectedRoute roles={[PERMISSIONS.ADMIN]}>
-          <></>
+          <Dashboard />
           // </ProtectedRoute>
         ),
       },
@@ -43,7 +45,10 @@ export const routesOutlets = [
       },
     ],
   },
-
+  {
+    path: "/login",
+    element: <LoginPage />,
+  },
   {
     path: "*",
     element: <Navigate replace to="/" />,

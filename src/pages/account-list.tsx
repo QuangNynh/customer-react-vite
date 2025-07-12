@@ -2,12 +2,11 @@ import IconExcel from "@/assets/IconExcel";
 import CardCustom from "@/components/common/CardCustom";
 import { PaginationCustom } from "@/components/common/PaginationCustom";
 import { fakeUsers } from "@/components/pages/account-balance/list-data-fake";
-import { fakeCard } from "@/components/pages/card-settings/data-card-fake";
+import FormSearchAccount from "@/components/pages/account-list/FormSearchListAccount";
+import { ListAccount } from "@/components/pages/account-list/ListAccount";
 import { DialogCreateCard } from "@/components/pages/card-settings/DialogCreateCard";
 import { DialogTagPriority } from "@/components/pages/card-settings/DialogShortCard";
-import ListCard from "@/components/pages/card-settings/ListCard";
 import { Button } from "@/components/ui/button";
-import { CircleAlert } from "lucide-react";
 import { useState } from "react";
 
 const AccountList = () => {
@@ -37,36 +36,10 @@ const AccountList = () => {
           </div>
         }
       >
-        <div className="flex items-center justify-between mb-4 w-full">
-          <div>
-            <div className="flex items-center gap-2 ">
-              <CircleAlert className="text-[#3b82f680]" size={14} />
-              <span className="text-xs">Ghi chú</span>
-            </div>
-            <div>
-              <ul className="list-disc space-y-1 pl-5 text-sm text-[#596d86]">
-                <li>
-                  Nếu người chơi được gắn thẻ, tài khoản người chơi sẽ hiển thị
-                  dấu màu tương ứng trong các báo cáo, hồ sơ, đánh giá ứng dụng,
-                  v.v.
-                </li>
-                <li>
-                  Nếu người chơi được đánh dấu bằng nhiều thẻ, tài khoản người
-                  chơi sẽ hiển thị màu có cài đặt ưu tiên nhỏ nhất
-                </li>
-              </ul>
-            </div>
-          </div>
-          <Button
-            variant="outline"
-            className="text-xs px-2 py-1"
-            onClick={() => setOpenSortCard(true)}
-          >
-            Ưu tiên thẻ
-          </Button>
-        </div>
+        <FormSearchAccount />
 
-        <ListCard listCard={fakeCard} limit={10} isLoading={false} />
+        <ListAccount />
+        {/* <ListCard listCard={fakeCard} limit={10} isLoading={false} /> */}
         <div className="flex justify-center">
           <PaginationCustom
             page={1}
